@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style/style.css') }}"
+    />
+
+    <title>Knjige</title>
+  </head>
+  <body>
+    <h1 class="page-title">Knjige</h1>
+
+    <div class="books-container">
+      {% for book in books %}
+      <div class="book-card">
+        <img src="{{ book[4] }}" alt="{{ book[1] }}" class="book-image" />
+        <div class="book-info">
+          <h2 class="book-title">{{ book[1] }}</h2>
+          <p class="book-author"><strong>Autor:</strong> {{ book[2] }}</p>
+          <p class="book-published">
+            <strong>Objavljeno:</strong> {{ book[3] }}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+<br>
+    <div class = "div-form">
+      <form action="/add" method="post" class="book-form">
+        <h2 class="form-title">Dodaj novu knjigu</h2>
+        <input
+          type="text"
+          name="title"
+          placeholder="Unesite naslov knjige"
+          class="form-input"
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="Unesite autora knjige"
+          class="form-input"
+        />
+        <input
+          type="text"
+          name="published"
+          placeholder="Unesite godinu objave knjige"
+          class="form-input"
+        />
+        <input
+          type="text"
+          name="image"
+          placeholder="Unesite link slike"
+          class="form-input"
+        />
+        <br>
+        <button type="submit" class="form-button">Dodaj knjigu</button>
+      </form>
+    </div>
+  </body>
+</html>

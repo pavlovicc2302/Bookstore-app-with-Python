@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    margin-top: auto;
+    background-color: #535878;
+    color: white;
+    height: 60px;
+}
+.books-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 70px;
+    margin-left: 20px;
+}
+
+.book-card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.book-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.book-info {
+    padding: 15px;
+}
+
+.book-title {
+    margin-top: 0;
+    font-size: 25px;
+}
+
+.book-author,
+.book-published,
+.book-image {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #666;
+}
+
+.div-form {
+    background-color: #9db0ce; 
+    padding: 15px; 
+    border-radius: 10px; 
+    margin-top: 10px; 
+    
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    max-width: 500px; 
+    margin: 0 auto;
+    margin-bottom: 50px; 
+}
+
+.book-form {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-title{
+   margin-top:10px;
+}
+
+.form-input {
+    padding: 13px;
+    width: 400px;
+    margin: 15px auto; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 22px;
+    display: block;
+}
+
+.form-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #535878;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 23px;
+    display: block;
+    margin: 0 auto; 
+    width: 400px;
+}
+
+.form-button:hover {
+    background-color: #3f425b;
+}
