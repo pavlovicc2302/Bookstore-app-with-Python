@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style/style.css') }}"
+    />
+    <title>Azuriranje knjige</title>
+  </head>
+  <body>
+    <h1>Biblioteka</h1>
+    <!-- Forma za azuriranje knjige sa podacima o knjizi -->
+    <div class="div-form">
+      <form action="/update/{{ book.id }}" method="post">
+        <h2 class="form-title">Izmeni knjigu</h2>
+        <input
+          type="text"
+          name="title"
+          value="{{book.title}}"
+          class="form-input"
+          required
+        />
+        <input
+          type="text"
+          name="author"
+          value="{{book.author}}"
+          class="form-input"
+          required
+        />
+        <input
+          type="text"
+          name="publishYear"
+          value="{{book.publishYear}}"
+          class="form-input"
+          required
+        />
+        <input
+          type="text"
+          name="image"
+          value="{{book.image}}"
+          class="form-input"
+          required
+        />
+        <br />
+        <button type="submit" class="form-button">Izmeni knjigu</button>
+      </form>
+    </div>
+  </body>
+</html>

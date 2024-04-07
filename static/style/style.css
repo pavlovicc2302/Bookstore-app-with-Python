@@ -34,7 +34,7 @@ h1 {
 
 .book-image {
     width: 100%;
-    height: auto;
+    height: 450px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -49,12 +49,22 @@ h1 {
 }
 
 .book-author,
-.book-published,
+.book-publishYear,
 .book-image {
     margin: 5px 0;
     font-size: 20px;
     color: #666;
 }
+
+.update-button{
+    padding: 10px 10px;
+    border: none;
+    background-color: #787fab;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 160px;}
 
 .div-form {
     background-color: #9db0ce; 

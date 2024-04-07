@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knjige</title>
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style/success.css') }}"
+  /></head>
+<body>
+    <h1>Biblioteka</h1>
+
+    <div class="message-container">
+        <h2>Knjiga uspešno {{message}}!</h2>
+        <img src="https://static.vecteezy.com/system/resources/previews/033/294/018/non_2x/fill-green-tick-mark-approved-check-mark-icon-symbols-symbol-for-website-computer-and-mobile-isolated-green-tick-verified-badge-icon-social-media-official-account-tick-symbol-vector.jpg" alt="">
+        <br><br>
+        <a href="/" class="return-btn">Povratak na početnu stranicu</a>
+
+    </div>
+</body>
+</html>

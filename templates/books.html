@@ -8,10 +8,10 @@
       href="{{ url_for('static', filename='style/style.css') }}"
     />
 
-    <title>Knjige</title>
+    <title>Biblioteka</title>
   </head>
   <body>
-    <h1 class="page-title">Knjige</h1>
+    <h1>Biblioteka</h1>
 
     <div class="books-container">
       {% for book in books %}
@@ -20,9 +20,11 @@
         <div class="book-info">
           <h2 class="book-title">{{ book[1] }}</h2>
           <p class="book-author"><strong>Autor:</strong> {{ book[2] }}</p>
-          <p class="book-published">
+          <p class="book-publishYear">
             <strong>Objavljeno:</strong> {{ book[3] }}
           </p>
+          <a href="/info/{{ book[0] }}"> <button class="update-button"> Azuriraj</button></a>
+         
         </div>
       </div>
       {% endfor %}
@@ -36,28 +38,33 @@
           name="title"
           placeholder="Unesite naslov knjige"
           class="form-input"
+          required
         />
         <input
           type="text"
           name="author"
           placeholder="Unesite autora knjige"
           class="form-input"
+          required
         />
         <input
           type="text"
-          name="published"
+          name="publishYear"
           placeholder="Unesite godinu objave knjige"
           class="form-input"
+          required
         />
         <input
           type="text"
           name="image"
           placeholder="Unesite link slike"
           class="form-input"
+          required
         />
         <br>
         <button type="submit" class="form-button">Dodaj knjigu</button>
       </form>
     </div>
+
   </body>
 </html>

@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif; /* Postavljamo font za tekst */
+    background-color: #f2f2f2; /* Postavljamo boju pozadine */
+}
+
+.message-container {
+    text-align: center; /* Centriramo sadržaj */
+    margin-top: 50px; /* Postavljamo margine */
+}
+h1 {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    margin-top: auto;
+    background-color: #535878;
+    color: white;
+    height: 60px;
+}
+h2 {
+    color: #333; /* Boja teksta */
+}
+
+
+.return-btn {
+    display: inline-block; /* Element se prikazuje kao blok, ali ostaje u liniji sa tekstom */
+    padding: 10px 20px; /* Dodajemo padding oko dugmeta */
+    background-color: #535878; /* Boja pozadine dugmeta */
+    color: #fff; /* Boja teksta dugmeta */
+    text-decoration: none; /* Uklanjamo podvučeni stil */
+    border-radius: 5px; /* Zaobljujemo ivice dugmeta */
+    transition: background-color 0.3s ease; /* Dodajemo glatki prelaz između boja */
+}
+
+.return-btn:hover {
+    background-color: #3f425b; /* Boja pozadine dugmeta pri hoveru */
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
