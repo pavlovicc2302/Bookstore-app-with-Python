@@ -74,7 +74,7 @@ def get_book_from_database(book_id):
         return None
 
 # Ruta za prikaz forme za azuriranje knjige
-@app.route("/info/<book_id>", methods=["GET"])
+@app.route("/update-info/<book_id>", methods=["GET"])
 def update_book_form(book_id):
 
     book = get_book_from_database(book_id)

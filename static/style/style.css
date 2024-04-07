@@ -57,14 +57,22 @@ h1 {
 }
 
 .update-button{
+    font-size: 18px;
+    font-weight: bold;
     padding: 10px 10px;
     border: none;
     background-color: #787fab;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 15px;
-    width: 160px;}
+    width: 160px;
+    transition: background-color 0.3s ease;
+
+}
+
+.update-button:hover {
+    background-color: #3f425b;
+}
 
 .div-form {
     background-color: #9db0ce; 
@@ -75,7 +83,7 @@ h1 {
     display: flex;
     justify-content: center; 
     align-items: center; 
-    max-width: 500px; 
+    max-width: 1000px; 
     margin: 0 auto;
     margin-bottom: 50px; 
 }
@@ -92,7 +100,7 @@ h1 {
 
 .form-input {
     padding: 13px;
-    width: 400px;
+    width: 850px;
     margin: 15px auto; 
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -115,4 +123,19 @@ h1 {
 
 .form-button:hover {
     background-color: #3f425b;
+}
+
+.return-btn {
+    font-size: 20px;
+    margin-left: 15px;
+    padding: 10px 20px;
+    background-color: #535878; 
+    color: #fff; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+}
+
+.return-btn:hover {
+    background-color: #3f425b; 
 }
