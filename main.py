@@ -21,6 +21,7 @@ def create_table_books():
                    title TEXT,
                    author TEXT,
                    publishYear INT,
+                   description TEXT,
                    image TEXT)
                    """)
     mysql.connection.commit()
@@ -44,11 +45,12 @@ def add_book():
     title = request.form["title"]
     author = request.form["author"]
     publishYear = request.form["publishYear"]
+    description = request.form["description"]
     image = request.form["image"]
     message = "dodata"
 
     cur = mysql.connection.cursor()
-    cur.execute("INSERT INTO books (title, author, publishYear, image) VALUES (%s, %s, %s, %s)", (title, author, publishYear, image))
+    cur.execute("INSERT INTO books (title, author, publishYear, description, image) VALUES (%s, %s, %s, %s, %s)", (title, author, publishYear, description, image))
     
     mysql.connection.commit()
     cur.close()
@@ -68,7 +70,8 @@ def get_book_from_database(book_id):
             "title": book[1],
             "author": book[2],
             "publishYear": book[3],
-            "image": book[4]
+            "description":book[4],
+            "image": book[5]
         }
     else:
         return None
@@ -101,6 +104,15 @@ def search_books():
     books = cursor.fetchall()
     cursor.close()
     return render_template("searched.html", books=books, query=query)
+    
+# Ruta za prikaz detalja knjige
+@app.route("/book/<book_id>")
+def book_details(book_id):
+    book = get_book_from_database(book_id)
+    if book:
+        return render_template("book.html", book=book)
+    else:
+        return "Knjiga nije pronađena."
 
 
 # Ruta za prihvatanje azuriranja podataka o knjizi
@@ -110,11 +122,12 @@ def update_book(book_id):
     title = request.form["title"]
     author = request.form["author"]
     publishYear = request.form["publishYear"]
+    description = request.form["description"]
     image = request.form["image"]
     message = "ažurirana"
 
     cur = mysql.connection.cursor()
-    cur.execute("UPDATE books SET title=%s, author=%s, publishYear=%s, image=%s WHERE id=%s", (title, author, publishYear, image, book_id))
+    cur.execute("UPDATE books SET title=%s, author=%s, publishYear=%s,description=%s, image=%s WHERE id=%s", (title, author, publishYear,description, image, book_id))
     mysql.connection.commit()
     cur.close()
 

@@ -29,7 +29,7 @@
     <div class="books-container">
       {% for book in books %}
       <div class="book-card">
-        <img src="{{ book[4] }}" alt="{{ book[1] }}" class="book-image" />
+        <img src="{{ book[5] }}" alt="{{ book[1] }}" class="book-image" />
         <div class="book-info">
           <h2 class="book-title">{{ book[1] }}</h2>
           <p class="book-author"><strong>Autor:</strong> {{ book[2] }}</p>
@@ -42,6 +42,9 @@
           <form action="/delete/{{ book[0] }}" method="post">
             <button class="delete-button" type="submit">Obriši</button>
           </form>
+          <a href="/book/{{ book[0] }}" class="details-button">
+            <button class="update-button details-button">Detalji</button>
+          </a>
         </div>
       </div>
       {% endfor %}
@@ -69,6 +72,13 @@
           type="text"
           name="publishYear"
           placeholder="Unesite godinu objave knjige"
+          class="form-input"
+          required
+        />
+        <input
+          type="text"
+          name="description"
+          placeholder="Unesite opis knjige"
           class="form-input"
           required
         />

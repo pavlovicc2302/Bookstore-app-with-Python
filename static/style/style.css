@@ -50,7 +50,8 @@ h1 {
 
 .book-author,
 .book-publishYear,
-.book-image {
+.book-image,
+.book-description {
     margin: 5px 0;
     font-size: 20px;
     color: #666;
@@ -206,4 +207,19 @@ h1 {
   }
 .search-title {
     text-align: center;
+  }
+
+  .details-button {
+    margin-top: 10px;
+  }
+
+  .book-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+  }
+  .book-details img {
+    width: 300px;
+
   }
