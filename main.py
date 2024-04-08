@@ -92,6 +92,17 @@ def delete_book(book_id):
     cur.close()
     return render_template("success.html", message="obrisana")
 
+# Ruta za pretragu knjige
+@app.route("/search", methods=["GET"])
+def search_books():
+    query = request.args.get("query")
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM books WHERE title LIKE %s OR author LIKE %s OR publishYear LIKE %s", ('%' + query + '%', '%' + query + '%', '%' + query + '%'))
+    books = cursor.fetchall()
+    cursor.close()
+    return render_template("searched.html", books=books, query=query)
+
+
 # Ruta za prihvatanje azuriranja podataka o knjizi
 @app.route("/update/<book_id>", methods=["post"])
 def update_book(book_id):

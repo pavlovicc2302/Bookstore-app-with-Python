@@ -12,6 +12,19 @@
   </head>
   <body>
     <h1>Biblioteka</h1>
+    <h2 class="search-title">Pretraži knjige</h2>
+
+    <div class="search-container">
+      <form action="/search" method="GET">
+        <input
+          class="search-input"
+          type="text"
+          name="query"
+          placeholder="naslov / godina izdanja / autor"
+        />
+        <button type="submit" class="search-button">Pretraži</button>
+      </form>
+    </div>
 
     <div class="books-container">
       {% for book in books %}

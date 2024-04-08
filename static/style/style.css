@@ -158,4 +158,52 @@ h1 {
 .delete-button:hover {
     background-color: #671514;
 }
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search-input {
+    padding: 10px;
+    width: 850px;
+    margin: 15px auto; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 20px;
+
+}
+.search-button{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 10px;
+    border: none;
+    background-color: #787fab;
+    color: #fff;
+    margin-top: 18px;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 160px;
+    height: max-content;
+    transition: background-color 0.3s ease;
+
+}
+
+.search-button:hover {
+    background-color: #3f425b;
+}
+.search-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
   
+  .search-container form {
+    display: flex; 
+  }
+.search-title {
+    text-align: center;
+  }

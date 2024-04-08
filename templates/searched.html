@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pretraga knjiga</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style/style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Rezultati pretrage</h1>
+
+    <div class="books-container">
+      {% if books %} {% for book in books %}
+      <div class="book-card">
+        <img src="{{ book[4] }}" alt="{{ book[1] }}" class="book-image" />
+        <div class="book-info">
+          <h2 class="book-title">{{ book[1] }}</h2>
+          <p class="book-author"><strong>Autor:</strong> {{ book[2] }}</p>
+          <p class="book-publishYear">
+            <strong>Objavljeno:</strong> {{ book[3] }}
+          </p>
+        </div>
+      </div>
+      {% endfor %} {% else %}
+      <p>Nema rezultata za "{{ query }}".</p>
+      {% endif %}
+    </div>
+    <div class="btn-container">
+      <a href="/" class="return-btn searched-btn"
+        >Povratak na početnu stranicu</a
+      >
+    </div>
+  </body>
+</html>
