@@ -7,7 +7,7 @@ app = Flask(__name__)
 # povezivanje sa bazom 'biblioteka'
 app.config["MYSQL_HOST"] = 'localhost'
 app.config["MYSQL_USER"] = 'root'
-app.config["MYSQL_PASSWORD"] = ''
+app.config["MYSQL_PASSWORD"] = 'root'
 app.config["MYSQL_HOST"] = 'localhost'
 app.config["MYSQL_DB"] = 'biblioteka'
 mysql = MySQL(app)
@@ -82,6 +82,15 @@ def update_book_form(book_id):
         return render_template("updateBook.html", book=book)
     else:
         return "Knjiga nije pronađena."
+
+# Ruta za brisanje knjige
+@app.route("/delete/<book_id>", methods=["POST"])
+def delete_book(book_id):
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM books WHERE id = %s", (book_id,))
+    mysql.connection.commit()
+    cur.close()
+    return render_template("success.html", message="obrisana")
 
 # Ruta za prihvatanje azuriranja podataka o knjizi
 @app.route("/update/<book_id>", methods=["post"])

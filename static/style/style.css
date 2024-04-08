@@ -139,3 +139,23 @@ h1 {
 .return-btn:hover {
     background-color: #3f425b; 
 }
+
+.delete-button{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 10px;
+    border: none;
+    background-color: #cd1616;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 160px;
+    transition: background-color 0.3s ease;
+
+}
+
+.delete-button:hover {
+    background-color: #671514;
+}
+  

@@ -23,14 +23,19 @@
           <p class="book-publishYear">
             <strong>Objavljeno:</strong> {{ book[3] }}
           </p>
-          <a href="/update-info/{{ book[0] }}"> <button class="update-button"> Ažuriraj</button></a>
-         
+          <a href="/update-info/{{ book[0] }}"
+            ><button class="update-button">Ažuriraj</button></a
+          >
+          <form action="/delete/{{ book[0] }}" method="post">
+            <button class="delete-button" type="submit">Obriši</button>
+          </form>
         </div>
       </div>
       {% endfor %}
     </div>
-<br>
-    <div class = "div-form">
+
+    <br />
+    <div class="div-form">
       <form action="/add" method="post" class="book-form">
         <h2 class="form-title">Dodaj novu knjigu</h2>
         <input
@@ -61,10 +66,9 @@
           class="form-input"
           required
         />
-        <br>
+        <br />
         <button type="submit" class="form-button">Dodaj knjigu</button>
       </form>
     </div>
-
   </body>
 </html>
