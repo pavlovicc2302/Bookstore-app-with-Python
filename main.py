@@ -7,7 +7,7 @@ app = Flask(__name__)
 # povezivanje sa bazom 'biblioteka'
 app.config["MYSQL_HOST"] = 'localhost'
 app.config["MYSQL_USER"] = 'root'
-app.config["MYSQL_PASSWORD"] = 'root'
+app.config["MYSQL_PASSWORD"] = ''
 app.config["MYSQL_HOST"] = 'localhost'
 app.config["MYSQL_DB"] = 'biblioteka'
 mysql = MySQL(app)
