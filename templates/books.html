@@ -20,7 +20,7 @@
           class="search-input"
           type="text"
           name="query"
-          placeholder="naslov / godina izdanja / autor"
+          placeholder="naslov / godina objavljivanja / autor"
         />
         <button type="submit" class="search-button">Pretraži</button>
       </form>
@@ -54,42 +54,18 @@
     <div class="div-form">
       <form action="/add" method="post" class="book-form">
         <h2 class="form-title">Dodaj novu knjigu</h2>
-        <input
-          type="text"
-          name="title"
-          placeholder="Unesite naslov knjige"
-          class="form-input"
-          required
-        />
-        <input
-          type="text"
-          name="author"
-          placeholder="Unesite autora knjige"
-          class="form-input"
-          required
-        />
-        <input
-          type="text"
-          name="publishYear"
-          placeholder="Unesite godinu objave knjige"
-          class="form-input"
-          required
-        />
-        <input
-          type="text"
-          name="description"
-          placeholder="Unesite opis knjige"
-          class="form-input"
-          required
-        />
-        <input
-          type="text"
-          name="image"
-          placeholder="Unesite link slike"
-          class="form-input"
-          required
-        />
+        <input type="text" name="title" placeholder="Unesite naslov knjige" class="form-input" required />
+        
+        <input type="text" name="author" placeholder="Unesite autora knjige" class="form-input" required/>
+        
+        <input type="text" name="publishYear" placeholder="Unesite godinu objave knjige" class="form-input" required />
+        
+        <textarea name="description" class="form-textarea" placeholder="Unesite opis knjige" required></textarea>
+        
+        <input type="text" name="image" placeholder="Unesite link slike" class="form-input" required />
+        
         <br />
+        
         <button type="submit" class="form-button">Dodaj knjigu</button>
       </form>
     </div>

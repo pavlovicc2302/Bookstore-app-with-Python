@@ -39,7 +39,7 @@ def books():
     cursor.close()
     return render_template("books.html", books = books)
 
-# POST metoda - dodavanje nove knjige u bazu
+# Dodavanje nove knjige u bazu
 @app.route("/add",methods=["POST"])
 def add_book():
     title = request.form["title"]
@@ -55,7 +55,7 @@ def add_book():
     mysql.connection.commit()
     cur.close()
     
-    return render_template("success.html",message=message)
+    return render_template("success.html",title = title,message = message)
 
 # Funkcija za dobijanje podataka o knjizi iz baze podataka na osnovu ID-a
 def get_book_from_database(book_id):
@@ -86,14 +86,37 @@ def update_book_form(book_id):
     else:
         return "Knjiga nije pronađena."
 
+
+# Ruta za prihvatanje azuriranja podataka o knjizi
+@app.route("/update/<book_id>", methods=["post"])
+def update_book(book_id):
+
+    title = request.form["title"]
+    author = request.form["author"]
+    publishYear = request.form["publishYear"]
+    description = request.form["description"]
+    image = request.form["image"]
+    message = "ažurirana"
+
+    cur = mysql.connection.cursor()
+    cur.execute("UPDATE books SET title=%s, author=%s, publishYear=%s,description=%s, image=%s WHERE id=%s", (title, author, publishYear,description, image, book_id))
+    mysql.connection.commit()
+    cur.close()
+
+    return render_template("success.html",title=title ,message=message)
+
+
 # Ruta za brisanje knjige
 @app.route("/delete/<book_id>", methods=["POST"])
 def delete_book(book_id):
     cur = mysql.connection.cursor()
+
+    book = get_book_from_database(book_id)
+
     cur.execute("DELETE FROM books WHERE id = %s", (book_id,))
     mysql.connection.commit()
     cur.close()
-    return render_template("success.html", message="obrisana")
+    return render_template("success.html", title = book["title"] ,message="obrisana")
 
 # Ruta za pretragu knjige
 @app.route("/search", methods=["GET"])
@@ -114,24 +137,6 @@ def book_details(book_id):
     else:
         return "Knjiga nije pronađena."
 
-
-# Ruta za prihvatanje azuriranja podataka o knjizi
-@app.route("/update/<book_id>", methods=["post"])
-def update_book(book_id):
-
-    title = request.form["title"]
-    author = request.form["author"]
-    publishYear = request.form["publishYear"]
-    description = request.form["description"]
-    image = request.form["image"]
-    message = "ažurirana"
-
-    cur = mysql.connection.cursor()
-    cur.execute("UPDATE books SET title=%s, author=%s, publishYear=%s,description=%s, image=%s WHERE id=%s", (title, author, publishYear,description, image, book_id))
-    mysql.connection.commit()
-    cur.close()
-
-    return render_template("success.html",message=message)
 
 if __name__ == "__main__":
     app.run(debug=True)

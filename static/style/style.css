@@ -56,6 +56,10 @@ h1 {
     font-size: 20px;
     color: #666;
 }
+.book-description{
+    width: 550px;
+    text-align: justify;
+}
 
 .update-button{
     font-size: 18px;
@@ -107,6 +111,19 @@ h1 {
     border-radius: 10px;
     font-size: 22px;
     display: block;
+}
+.form-textarea{
+    width: 850px; 
+    min-height: 5em; 
+    padding: 13px;
+    margin: 15px auto;
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    font-size: 22px; 
+    display: block;
+    font-family: inherit;
+    resize: vertical;
+    
 }
 
 .form-button {
